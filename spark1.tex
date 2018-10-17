@@ -386,6 +386,7 @@ On top of that:
 
 \begin{frame}[fragile]
   \frametitle{Language support}
+\vspace{-2em}
     \begin{lstlisting}[title=Scala]
 val lines = sc.textFile(...)
 lines.filter(x => x.contains("ERROR")).count()
@@ -612,6 +613,7 @@ cont: List(("a", 1), ("a", 1), ("b", 3))
 
 \pause
 
+\vspace{-2em} % Avoid overlapping with footer
 \begin{lstlisting}[basicstyle=\ttfamily\Large]
 val fn = (x:Int)) => x > 1
 cont.filter(fn)
@@ -638,6 +640,8 @@ cont.filter(x => x>1)
 \pause
 
 {\Large Furthermore, we could use underscores to replace arguments:}
+
+\vspace{-2em}
 
 \begin{lstlisting}[basicstyle=\ttfamily\huge]
 cont.filter(_>1)
@@ -683,7 +687,7 @@ nums.filter(_>1)
 \vfill
 
 \begin{lstlisting}[basicstyle=\ttfamily\Large,linebackgroundcolor={\btLstHL<1>{1}}]
-nums.filter(_._1 == "a" && _._1 == 1) 
+cont.filter(_._1 == "a" && _._1 == 1) 
 >  ???
 \end{lstlisting}
 
@@ -716,7 +720,7 @@ one-argument function accepting a 2-Tuple.
 Remember, each new underscore represents a new argument. So that expression expands to:
 
 \begin{lstlisting}[language=TeX,basicstyle=\ttfamily\Large]
-nums.filter((x, y) => x._1 == "a" &&
+cont.filter((x, y) => x._1 == "a" &&
                    y._2 == 1) 
 \end{lstlisting}
 \end{frame}
@@ -727,7 +731,7 @@ nums.filter((x, y) => x._1 == "a" &&
 The right expression is:
 
 \begin{lstlisting}[basicstyle=\ttfamily\Large,linebackgroundcolor={\btLstHL<1>{1,2}}]
-nums.filter(x => x._1 == "a" &&
+cont.filter(x => x._1 == "a" &&
                    x._2 == 1) 
 > List((a, 1), (a, 1))
 \end{lstlisting}
@@ -949,6 +953,7 @@ docker exec -it dockerspark_master_1 bin/spark-shell
 
 \end{frame}
 \begin{frame}[fragile]{Compose.yml Master}
+\vspace{-2em} % Avoid overlapping with footer
 \begin{lstlisting}[basicstyle=\ttfamily,language={},linebackgroundcolor={
     \btLstHL<1>{2}%
     \btLstHL<2>{3}%
@@ -970,6 +975,7 @@ master:
   \end{lstlisting}
 \end{frame}
 \begin{frame}[fragile]{Compose.yml Worker}
+\vspace{-2em} % Avoid overlapping with footer
 \begin{lstlisting}[language={},basicstyle=\ttfamily,linebackgroundcolor={
     \btLstHL<1>{2}%
     \btLstHL<2>{3}%
@@ -1141,9 +1147,9 @@ $
 \includegraphics[width=\textwidth]{images/example.png}
 \end{frame}
 
-\section*{Next week on SIBD}
+\section*{Next week}
 
-\begin{frame}{Next week on SIBD}
+\begin{frame}{Next week}
   \begin{itemize}
   \item Advanced Spark configuration
   \item Multiple hosts

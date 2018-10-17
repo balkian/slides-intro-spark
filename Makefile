@@ -22,8 +22,8 @@ test: compile
 
 pdf:
 	@mkdir -p $(TEMP_DIR)
-	xelatex -output-directory ./$(TEMP_DIR) spark1.tex
-	xelatex -output-directory ./$(TEMP_DIR) spark2.tex
+	pdflatex -output-directory ./$(TEMP_DIR) spark1.tex
+	pdflatex -output-directory ./$(TEMP_DIR) spark2.tex
 	cp $(TEMP_DIR)/*.pdf .
 
 clean:
